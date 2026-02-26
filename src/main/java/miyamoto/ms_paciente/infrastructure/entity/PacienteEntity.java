@@ -1,4 +1,4 @@
-package miyamoto.ms_paciente.infrastrcture.entity;
+package miyamoto.ms_paciente.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,14 +17,18 @@ public class PacienteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(name = "cpf", nullable = false, unique = true, length = 11)
     private String cpf;
 
-    @Column(name = "data_nascimento", nullable = false)
+    @Column(name = "senha", nullable = false)
+    private String senha;
+
+    @Column(name = "dataNascimento", nullable = false)
     private LocalDate dataNascimento;
 
+    @Column(name = "convenio")
     private String convenio;
 }
