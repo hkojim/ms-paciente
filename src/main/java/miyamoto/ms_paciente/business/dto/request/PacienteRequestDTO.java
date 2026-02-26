@@ -6,8 +6,10 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 
-public record PacienteRequestDTO(@NotBlank String nome,
-                                 @NotBlank @Size(min = 11, max = 11) String cpf,
-                                 @NotNull LocalDate dataNascimento,
-                                 String convenio) {
-}
+public record PacienteRequestDTO(
+        @NotBlank String nome,
+        @NotBlank @Size(min = 11, max = 11) String cpf,
+        @NotBlank String senha,
+        @NotNull LocalDate dataNascimento,
+        String convenio
+) {}
