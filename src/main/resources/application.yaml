@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ms-paciente
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lab_db
+    username: postgres
+    password: M1yamoto
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 5000
+
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
